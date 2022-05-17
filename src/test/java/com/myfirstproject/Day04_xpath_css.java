@@ -19,10 +19,23 @@ public class Day04_xpath_css {
     }
     @Test
     public void xpath_css(){
+        /*Locating username, password, and button using xpath*/
         driver.findElement(By.xpath("//input[@type='email']")).sendKeys("testtechproed@gmail.com");
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Test1234!");
         driver.findElement(By.xpath("//input[@type='submit']")).click();
     }
+    @Test
+    public void css(){
+        /*1. Locations, username, password, and button usign cssSelector
+        There is no // 2. There is no @ symbol */
+        driver.findElement(By.cssSelector("input[type='email']")).sendKeys("testtechproed@gmail.com");
+//        Alternative cssLocator for email : input#session_email  OR   #session_email
+//        Alternative cssLocator for email : input.form-control   OR   .form-control
+//        Note: # = id    and     . = class
+        driver.findElement(By.cssSelector("input[type='password']")).sendKeys("Test1234!");
+        driver.findElement(By.cssSelector("input[type='submit']")).click();
+    }
+    //2:05 pm
     @After
     public void tearDown(){
         driver.quit();

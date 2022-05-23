@@ -1,10 +1,7 @@
-package practice01;
+package com.myfirstproject.practice01;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.List;
 
-public class Q05 {
+public class Q05Practice {
 
     /*
             ...Exercise...
@@ -27,7 +24,7 @@ public class Q05 {
            2.deleteButtonsAndValidate()
    */
 
-           WebDriver driver;
+    WebDriver driver;
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -71,10 +68,9 @@ public class Q05 {
 
     }
 
-//    @After
-//    public void tearDown(){
-//        driver.quit();
-//    }
-
+    @After
+    public void tearDown(){
+        driver.quit();
+   }
 
 }

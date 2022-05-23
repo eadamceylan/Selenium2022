@@ -9,7 +9,7 @@ import java.time.Duration;
 public abstract class TestBase {
     /*
      * What is TestBase?
-     * TestBase is a class that has repeated pre condition and post condiditon
+     * TestBase is a class that has repeated pre-condition and post condition
      * We have @Before and @After methods
      *
      * TestBase should be an abstract class.We just want to implement the methods in TestBase

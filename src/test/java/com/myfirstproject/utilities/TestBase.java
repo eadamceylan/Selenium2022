@@ -67,7 +67,9 @@ public abstract class TestBase {
     @After
     public void tearDown(){
         driver.quit();
+        extentReports.flush();
     }
+
 
     public void takeScreenShot() throws IOException {
 //        1. Taking screenshot using getScreenshotAs
@@ -83,5 +85,6 @@ public abstract class TestBase {
         String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentDate+"test-image.png";
         File finalPath = new File(path);
         FileUtils.copyFile(image,finalPath);
+
     }
 }

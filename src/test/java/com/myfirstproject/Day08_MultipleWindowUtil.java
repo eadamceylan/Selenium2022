@@ -17,6 +17,4 @@ public class Day08_MultipleWindowUtil extends TestBase {
 
     }
 
-    private void switchToTargetWindow(String new_window) {
-    }
 }

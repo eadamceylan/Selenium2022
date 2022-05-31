@@ -11,7 +11,21 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 public class Day10_Screenshots extends TestBase {
-
+    public void takeScreenShot() throws IOException {
+//        1. Taking screenshot using getScreenshotAs
+        File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        /*
+        Alternatively
+        TakesScreenshot ts=(TakesScreenshot)driver;
+        File image = ts.getScreenshotAs(OutputType.FILE);
+         */
+//        2. We will save the image in this path. using currentDate for getting different name every time
+        String currentDate = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+//        System.out.println(currentDate);
+        String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentDate+"test-image.png";
+        File finalPath = new File(path);
+        FileUtils.copyFile(image,finalPath);
+    }
     @Test
     public void screenshotTest() throws Exception {
         driver.get("https://www.google.com");
@@ -22,7 +36,7 @@ public class Day10_Screenshots extends TestBase {
         takeScreenShot();
     }
     /*
-     * How to do capture screenshot in your automation framework?/How do you get screenshot in selenium?
+     * How do do capture screenshot in your automation framework?/How do you get screenshot in selenium?
      * I use getScreenshotas method to capture teh screenshot.
      * Actually we have a reusable methods to capture the screenshot
      *

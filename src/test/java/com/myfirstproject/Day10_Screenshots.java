@@ -36,8 +36,8 @@ public class Day10_Screenshots extends TestBase {
         takeScreenShot();
     }
     /*
-     * How do do capture screenshot in your automation framework?/How do you get screenshot in selenium?
-     * I use getScreenshotas method to capture teh screenshot.
+     * How to do capture screenshot in your automation framework?/How do you get screenshot in selenium?
+     * I use getScreenshotas method to capture the screenshot.
      * Actually we have a reusable methods to capture the screenshot
      *
      * */
